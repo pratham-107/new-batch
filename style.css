@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+}
+
+button{
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    border: 2px solid aliceblue;
+}
+
+button:hover{
+    background-color: orange;
+    transition: 0.2s ease-in-out;
+}
+
+button:active{
+    background-color: red;
+}

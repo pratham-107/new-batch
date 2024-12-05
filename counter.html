@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #333;
+    }
+    #head{
+        color: aliceblue;
+        font-size: 100px;
+        
+    }
+    #counter{
+        color: aliceblue;
+        font-size: 80px;
+        text-align: center;
+    }
+    button{
+        background-color: white;
+        height: 50px;
+        width: 100px;
+        border-radius: 10px;
+        font-size: 30px;
+    }
+    button:hover{
+        background-color: orange;
+        transition: 0.1s ease;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2 id="head">counter</h2>
+<p id="counter">0</p>
+<button onclick="add()">+</button>
+<button onclick="minus()">-</button>
+<button onclick="reset()">reset</button>
+    </div>
+
+<script>
+    let counter = 0;
+
+    function add() {
+        document.getElementById("counter").innerHTML = ++counter;
+    }
+
+    function minus() {
+        document.getElementById("counter").innerHTML = --counter;
+    }
+
+    function reset() {
+        counter = 0;
+        document.getElementById("counter").innerHTML = counter;
+    }
+</script>
+</body>
+</html>

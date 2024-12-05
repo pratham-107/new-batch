@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <!-- <h2>Clicked me Button</h2>
+        <button onclick="clickme()">click me</button>
+        <p id="click"></p>
+
+        <script>
+            function clickme(){
+                alert(Date());
+                document.getElementById("click").innerHTML = "already checked";
+            }
+        </script> -->
+
+
+        <h1>calculator</h1>
+        Enter A : <input id="num1" type="number"> <br><br>
+        Enter B : <input id="num2" type="number"> <br><hr>
+        <button onclick="add()">add</button>
+        <button onclick="subtract()">subtract</button>
+        <button onclick="multi()">multi</button> 
+        <button onclick="divide()">divide</button>
+        <p id="add"></p>
+
+
+        <script>
+            function add(){
+                const a = parseInt(document.getElementById("num1").value);
+                const b = parseInt(document.getElementById("num2").value);
+
+                const sum = a + b;
+
+                document.getElementById("add").innerHTML = "hurrah you got sum!! now you can multiply , divide and subtract " + '<button onclick="subtract()">subtract</button>' + '<button onclick="multi()">multi</button>' + '<button onclick="divide()">divide</button>';
+
+                alert((sum));
+
+
+            }
+
+            function subtract(){
+                const a = parseInt(document.getElementById("num1").value);
+                const b = parseInt(document.getElementById("num2").value);
+
+                const sum = a - b;
+
+                document.getElementById("add").innerHTML = "hurrah you got sum!! now you can multiply and divide";
+                alert((sum));
+            }
+
+            function multi(){
+                const a = parseInt(document.getElementById("num1").value);
+                const b = parseInt(document.getElementById("num2").value);
+
+                const sum = a * b;
+
+                document.getElementById("add").innerHTML = "hurrah you got sum!!now you can divide";
+                alert((sum));
+            }
+
+            function divide(){
+                const a = parseInt(document.getElementById("num1").value);
+                const b = parseInt(document.getElementById("num2").value);
+
+                const sum = a / b;
+
+                document.getElementById("add").innerHTML = "hurrah you got sum! now you can subtarct , add and multiply";
+                alert((sum));
+            }
+        </script>
+    </body>
+</html>
