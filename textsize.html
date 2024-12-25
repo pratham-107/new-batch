@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .container{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: pink;
+        }
+        .box{
+            background-color: white;
+            border: 1px solid black;
+            padding: 10px 40px;
+        }
+        button{
+            padding: 5px 30px;
+        }
+        #counter{
+            margin-left: 110px;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="box">
+                <p id="para">Good Morning</p>
+                <button onclick="add()">+</button>
+                <button onclick="minus()">-</button>
+                <button onclick="reset()">reset</button>
+                <p id="counter">0</p>
+            </div>
+        </div>
+    
+        <script>
+            let counter = 0;
+            let a = 16; // normal value
+            let b = 2;  //multiple by 2
+
+            function add() {
+                document.getElementById("counter").innerHTML = ++counter;
+                document.getElementById("para").style.fontSize = (a + counter * b ) + "px";
+            }
+    
+            function minus() {  
+                    document.getElementById("counter").innerHTML = --counter;
+                    document.getElementById("para").style.fontSize = (a + counter * b) + "px";
+            }
+    
+            function reset() {
+                document.getElementById("counter").innerHTML = counter = 0;
+                document.getElementById("para").style.fontSize = a ;
+            }
+        </script>
+    </body>
+</html>

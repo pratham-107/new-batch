@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                
+            }
+            .container{
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: pink;
+            }
+            .box{
+                background-color: whitesmoke;
+                border-radius: 20px;
+                padding: 50px;
+                border: 2px solid black;
+            }
+            input{
+                background-color: whitesmoke;
+                padding: 15px;
+                border-radius: 20px;
+                border: 2px solid black;
+                font-size: 20px;
+            }
+            button{
+                padding: 30px;
+                border-radius: 20px;
+                align-items: center;
+                font-size: 150%;
+                border: 2px solid black;
+                background-color: pink;
+            }
+            button:hover{
+                background-color: white;
+            }
+            p{
+                font-size: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">
+                <h2>Barbie Calculator !!!</h2>
+                <input id="num1" type="number" placeholder="Enter num 1 "><br><br>
+                <input id="num2" type="number" placeholder="Enter num 2"><br><br>
+                <p id="add"></p><br>
+                <button onclick="sum()">+</button>
+                <button onclick="diff()">-</button>
+                <button onclick="mult()">*</button>
+                <button onclick="div()">/</button>
+                
+            </div>
+        </div>
+
+        <script>
+            function sum(){
+                const a = parseInt(document.getElementById("num1").value);
+                const b = parseInt(document.getElementById("num2").value);
+
+                const sum = a + b;
+
+                document.getElementById("add").innerHTML = sum;
+                alert((sum));
+
+            }
+
+            function diff(){
+                const a = parseInt(document.getElementById("num1").value);
+                const b = parseInt(document.getElementById("num2").value);
+
+                const sum = a - b;
+
+                document.getElementById("add").innerHTML = sum;
+                alert((sum));
+            }
+
+            function mult(){
+                const a = parseInt(document.getElementById("num1").value);
+                const b = parseInt(document.getElementById("num2").value);
+
+                const sum = a * b;
+
+                document.getElementById("add").innerHTML = sum;
+                alert((sum));
+            }
+
+            function div(){
+                const a = parseInt(document.getElementById("num1").value);
+                const b = parseInt(document.getElementById("num2").value);
+
+                const sum = a / b;
+
+                document.getElementById("add").innerHTML = sum;
+                alert((sum));
+            }
+        </script>
+    </body>
+</html>

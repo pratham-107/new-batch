@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Fibonacci Checker</title>
+    </head>
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .container{
+            background-color: pink;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+
+        }
+        
+        .box{
+            background-color: white;
+            text-align: center;
+            padding: 20px 100px;
+            border-radius: 20px;
+            border: 2px solid black;
+        }
+        input{
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+        button{
+            background-color: pink;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+        button:hover{
+            background-color: white;
+            
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="box">
+                <h2>Fibonacci</h2>
+                <input type="number" id="inp" placeholder="Enter the number" >
+                <br><br>
+                <p id="para"></p>
+                <br><br>
+                <button onclick="fib()">Check</button>
+            </div>
+        </div>
+        
+        <script>
+            function fib() {
+                const n = parseInt(document.getElementById("inp").value);
+
+                let a = 1;
+                let b = 1;
+                let sum =0;
+
+                for(let i=3; i<=n; i++){
+                    sum = a + b;
+                    alert=(sum);
+                    a = b;
+                    b = sum;
+                }
+            }
+        </script>
+    </body>
+</html>

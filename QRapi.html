@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>QR Code Generator</title>
+    </head>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .container{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-direction: column;
+            background-color: beige;
+        }
+        .box{
+            height: 150px;
+            width: 200px;
+            background-color: rgb(54, 211, 11);
+            padding: 20px 50px;
+            border-radius: 10px;
+        }
+        p{
+            margin-left: 40px;
+        }
+        input{
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        button{
+            padding: 10px 20px;
+            margin-left: 40px;
+            border-radius: 5px;
+        }
+        
+    </style>
+    <body>
+        <div class="container">
+            <div class="box">
+                <p>Generate QR Code</p>
+                <input type="text" id="inp" placeholder="Enter text or URL"><br><br>
+                <button onclick="generate()">Generate QR</button>
+            </div>
+            <br>
+            <div class="imgqr">
+                <div id="img-qr">
+                    <img src="" id="imgqr">
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function generate() {
+                let inputtext = document.getElementById("inp");
+                let imgqr = document.getElementById("imgqr");
+                
+                imgqr.src = "//api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + inputtext.value;
+            }
+        </script>
+    </body>
+</html>

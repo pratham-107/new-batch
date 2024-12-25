@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .container{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        } 
+        button{
+            padding: 5px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+        } 
+        button:hover{
+            transform: scale(1.1);
+        }
+        .red{
+            background-color: red;
+            color: white;
+        }
+        .blue{
+            background-color: blue;
+            color: white;
+        }
+        .green{
+            background-color: green;
+            color: white;
+        }
+        .orange{
+            background-color: orange;
+            color: white;
+        }
+        .pink{
+            background-color: pink;
+            color: white;
+        }
+        .purple{
+            background-color: purple;
+            color: white;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <button class="red" onclick="changeColor('red')">Red</button>
+            <button class="blue" onclick="changeColor('blue')">Blue</button>
+            <button class="green" onclick="changeColor('green')">Green</button>
+            <button class="orange" onclick="changeColor('orange')">Orange</button>
+            <button class="pink" onclick="changeColor('pink')">Pink</button>
+            <button class="purple" onclick="changeColor('purple')">Purple</button>
+        </div>
+    </body>
+    <script>
+        function changeColor(color){
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</html>

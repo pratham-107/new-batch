@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <style>
+        body,html{
+            margin: 0;
+            left: 0;
+            height: 100%;
+        }
+        .container{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(212, 20, 212);
+        }
+        .box{
+            border-radius: 5px;
+            padding: 20px 70px;
+            background-color: rgb(247, 149, 247);
+            margin-right: 500px;
+        }
+        input{
+            padding: 10px 50px;
+            border-radius: 5px;
+        }
+        button{
+            padding: 10px 40px;
+            border-radius: 5px;
+            background-color: yellow;
+        }
+        button:hover{
+            background-color: rgb(235, 235, 31);
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="box">
+                <h2>Age calculator!!!</h2>
+                <input type="date" id="date"> <button onclick="cal()">calculate</button>
+                <p id="para"></p>
+            </div>
+        </div>
+        <script>
+            function cal() {
+                const birthDate = new Date(document.getElementById("date").value);
+                const today = new Date();
+                let ageYears = today.getFullYear() - birthDate.getFullYear();
+                let ageMonths = today.getMonth() - birthDate.getMonth();
+                let ageDays = today.getDate() - birthDate.getDate();
+                if (ageMonths < 0) {
+                    ageYears--;
+                    ageMonths += 12;
+                }
+                if (ageDays < 0) {
+                    ageMonths--;
+                    const lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 0);
+                    ageDays += lastMonth.getDate();
+                    if (ageMonths < 0) {
+                        ageMonths = 11;
+                        ageYears--;
+                    }
+                }
+                document.getElementById("para").innerHTML = `Age: ${ageYears} years, ${ageMonths} months, and ${ageDays} days`;
+            }
+        </script>
+    </body>
+</html>

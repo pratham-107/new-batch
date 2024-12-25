@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>calculator</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">
+                <input type="number" id="num1"> <input type="number" id="num2"> 
+                <button id="btn" onclick="sum()">+</button>
+                <button id="btn" onclick="sub()">-</button>
+                <button id="btn" onclick="diff()">/</button>
+                <button id="btn" onclick="mult()">*</button>
+                <h2 id="ans"></h2>
+            </div>
+        </div>
+
+        <script>
+            let inp = document.getElementById("num1");
+            let inp2 = document.getElementById("num2");
+            let btn = document.getElementById("btn");
+            let ans = document.getElementById("ans");
+
+            function sum(){
+                let result = parseInt(num1.value) + parseInt(num2.value);
+                ans.innerHTML = result;
+            }
+            function sub(){
+                let result = parseInt(num1.value) - parseInt(num2.value);
+                ans.innerHTML = result;
+            }
+            function diff(){
+                let result = parseInt(num1.value) / parseInt(num2.value);
+                ans.innerHTML = result;
+            }
+            function mult(){
+                let result = parseInt(num1.value) * parseInt(num2.value);
+                ans.innerHTML = result;
+            }
+        </script>
+    </body>
+</html>

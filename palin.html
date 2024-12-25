@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 100%;
+}
+.box{
+    background-color: #333;
+    color: white;
+    border-radius: 20px;
+    padding: 50px;
+    border: 2px solid black;
+    border: 2px solid white;
+}
+input{
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+button{
+    padding: 10px 70px;
+    border-radius: 10px;
+    background-color: skyblue;
+    color: white;
+}
+button:hover{
+    background-color: white;
+    color: black;
+}
+#para{
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>Palindrome !!</h2>
+            <p>Enter and check yupp</p>
+          
+            <input type="number" id="inp" placeholder="Enter your number">
+            <br><br>
+            <button onclick="palindrome()">Check</button>
+            <br>
+            <p id="para"></p>
+        </div>
+    </div>
+
+
+    <script>
+        function palindrome(){
+            let n = parseInt(document.getElementById("inp").value); 
+            let rev = 0; 
+            let dummy = n;
+    
+            while(n != 0){
+                const rem = n % 10; 
+                rev = rev * 10 + rem; 
+                n = Math.floor(n / 10); 
+            }
+            if(dummy == rev){
+                document.getElementById("para").innerHTML = "Yupp!! It's a palindrome";
+            }else{
+                document.getElementById("para").innerHTML = "sorry!! It's not a palindrome";
+            }
+            console.log(rev);
+        }
+    </script>
+</body>
+</html>
