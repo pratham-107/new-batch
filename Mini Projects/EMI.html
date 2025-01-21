@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>EMI Calculator</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .container {
+                background-color: #fff;
+                padding: 20px 40px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+            h2 {
+                margin-bottom: 20px;
+            }
+            input {
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            button {
+                padding: 10px 20px;
+                border-radius: 5px;
+                border: none;
+                background-color: #36d30b;
+                color: #fff;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            button:hover {
+                background-color: #2a9c07;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Loan Calculator</h2>
+            Principal: <input type="number" id="loanAmount" placeholder="Enter loan amount"><br><br>
+            Interest Rate (% per annum): <input type="number" id="interestRate" placeholder="Enter interest rate"><br><br>
+            Tenure (months): <input type="number" id="loanTenure" placeholder="Enter loan tenure"><br><br>
+            <button onclick="cal()">Calculate EMI</button><br><br>
+            <p id="result"></p>
+        </div>
+
+        <script>
+            function cal() {
+                let p = parseFloat(document.getElementById('loanAmount').value);
+                let i = parseFloat(document.getElementById('interestRate').value) / 12 / 100;
+                let t = parseFloat(document.getElementById('loanTenure').value);
+
+                let emi = (p * i * Math.pow(1 + i, t)) / (Math.pow(1 + i, t) - 1);
+                document.getElementById('result').innerText = `Monthly EMI: ${emi.toFixed(2)}`;
+            }
+        </script>
+    </body>
+</html>

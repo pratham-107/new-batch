@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .box {
+            background-color: white;
+            text-align: center;
+            padding: 20px 40px;
+            border-radius: 20px;
+            border: 2px solid black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 2px solid black;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: pink;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>BODY MASS INDEX</h2>
+            <h4>BMI Calculator</h4>
+            <input type="number" placeholder="Enter Age"><br><br>
+            <input id="height" type="number" placeholder="Enter Height (in cms)"><br><br>
+            <input id="weight" type="number" placeholder="Enter your Weight (in KG)"><br><br>
+            <button onclick="bmi()">Calculate</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script>
+        function bmi() {
+            const height = parseFloat(document.getElementById("height").value) / 100; // Convert height to meters
+            const weight = parseFloat(document.getElementById("weight").value);
+
+            const bmi = weight / (height * height);
+            let result = "";
+
+            if (bmi < 16) {
+                result = "Severe Thinness";
+            } else if (bmi >= 16 && bmi < 18.5) {
+                result = "Underweight";
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                result = "Normal";
+            } else if (bmi >= 25 && bmi <= 29.9) {
+                result = "Overweight";
+            } else {
+                result = "Obesity";
+            }
+
+            document.getElementById("result").innerText = `Your BMI is ${bmi.toFixed(2)} - ${result}`;
+        }
+    </script>
+</body>
+</html>
