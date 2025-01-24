@@ -1,63 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: antiquewhite;
-}
-
-.box{
-    border: 2px solid black;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 30px;
-    height: 150px;
-    width: 300px;
-}
-
-input{
-    padding: 10px;
-}
-
-button{
-    padding: 10px;
-}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <div class="box">
-            <input type="text" id="inp">
-        <button onclick="search()">search</button>
-        <br><br>
-        <a href="" id="ans"></a>
-        </div>
-    </div>
-    
-    <script>
-        let inp = document.getElementById("inp");
-        let ans = document.getElementById("ans");
+  <div class="container">
+    <button class="red" onclick="changeColor('red')">Red</button>
+    <button class="blue" onclick="changeColor('blue')">Blue</button>
+    <button class="green" onclick="changeColor('green')">Green</button>
+    <button class="orange" onclick="changeColor('orange')">Orange</button>
+    <button class="pink" onclick="changeColor('pink')">Pink</button>
+    <button class="purple" onclick="changeColor('purple')">Purple</button>
+</div>
 
-        function search(){
-            ans.href = "https://github.com/" + inp.value;
-            document.getElementById("ans").innerHTML = "view profile";
+  <script>
+    function changeColor(color){
+            document.body.style.backgroundColor = color;
         }
-    </script>
+  </script>
 </body>
 </html>

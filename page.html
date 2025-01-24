@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5em 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    gap: 3em;
+    list-style: none;
+}
+
+nav ul a {
+    color: #ffffff;
+    transition: 0.2s ease-in-out;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+nav ul a:hover {
+    color: yellow;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: 800;
+    transition: 0.2s ease-in-out;
+    color: white;
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: yellow;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: yellow;
+}
+
+.home {
+    background-image: url('https://img.freepik.com/free-vector/abstract-gradient-circuit-board-background_52683-14562.jpg?ga=GA1.1.1866550606.1717837211&semt=ais_incoming');
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6.25em 3.125em;
+    position: relative;
+    background-size: cover; 
+    background-position: center; 
+}
+
+.content {
+    max-width: 600px;
+    margin-left: 10em;
+}
+
+.home h1 {
+    color: aliceblue;
+    font-size: 3em;
+    line-height: 1.2;
+    margin-bottom: 1.25em;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="" class="logo">Coding Thinker</a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">portfolio</a></li>
+            <li><a href="#">course</a></li>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+       <a href="login.html"><button class="btn">login</button></a> 
+    </nav>
+
+    <section class="home" id="home">
+        <div class="content">
+            <h1>
+                Welcome to Coding Thinker
+            </h1>
+        </div>
+    </section>
+</body>
+</html>
