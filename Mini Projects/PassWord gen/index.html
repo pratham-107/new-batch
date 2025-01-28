@@ -73,21 +73,17 @@
                 const number = document.getElementById('number').value;
                 let pass = ""; 
 
-                pass += fname[Math.floor(Math.random() * fname.length)];
-                pass += fname[Math.floor(Math.random() * fname.length)];
-                pass += fname[Math.floor(Math.random() * fname.length)];
-                pass += fname[Math.floor(Math.random() * fname.length)];
-
-                pass += lname[Math.floor(Math.random() * lname.length)];
-                pass += lname[Math.floor(Math.random() * lname.length)];
-
-                pass += special[Math.floor(Math.random() * special.length)];
-
-                pass += number[Math.floor(Math.random() * number.length)];
-                pass += number[Math.floor(Math.random() * number.length)];
-                pass += number[Math.floor(Math.random() * number.length)];
-                pass += number[Math.floor(Math.random() * number.length)];
-                pass += number[Math.floor(Math.random() * number.length)];
+                for (let i = 0; i < 12; i++) {
+                    if (i >= 0 && i < 4) {
+                        pass += name[Math.floor(Math.random() * fname.length)];
+                    } else if (i >= 4 && i < 6) {
+                        pass += name[Math.floor(Math.random() * lname.length)];
+                    } else if (i >= 6 && i < 7) {
+                        pass += special[Math.floor(Math.random() * special.length)];
+                    } else {
+                        pass += number[Math.floor(Math.random() * number.length)];
+                    }
+                }
 
                 document.getElementById('password').value = pass;
             }
