@@ -27,6 +27,11 @@
             padding: 10px;
             border: none;
             border-radius: 5px;
+
+            &:hover{
+                transform: scale(1.1);
+                transition: 0.2s ease;
+            }
         }
 
         button{
@@ -41,8 +46,7 @@
             &:hover{
                 transform: scale(1.1);
                 transition: 0.2s ease;
-                background-color: rgba(255, 0, 0, 0.368);
-                color: b;
+                background-color: powderblue;
             }
         }
 
@@ -58,7 +62,7 @@
     </style>
 </head>
 <body>
-    <form name="">
+    <form name="submit-to-google-sheet">
         <h2>Login Form</h2>
         <input type="text" name="email" placeholder="Enter your email" required>
         <br><br>
@@ -70,5 +74,17 @@
         <br><br>
         <a href="signup.html">Don't have an account?</a>
     </form>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzqeQelmXSKhD7bpTCEsrdSC3k2MjpZotYH8ESzViCUMVxuL3RIy1NNKsMwwtqQab2kyQ/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
 </html>
