@@ -1,0 +1,9 @@
+//callback function with high order function//
+
+function x (){
+    console.log("hello");    //callback function//
+} 
+
+function y(){
+    x();                     //higher order function//
+}
